@@ -36,6 +36,7 @@ class ChatMessage extends StatelessWidget {
                     child: Text(text),
                   ),
                 ],
+                //testing
               ),
             ),
           ],
