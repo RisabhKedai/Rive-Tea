@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:rive_tea/Pages/ChatRoom.dart';
 
 import 'Pages/SignUp.dart';
 import 'Pages/Login.dart';
+import 'Pages/Home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Login(),
+      home: ChatRoom(),
     );
   }
 }

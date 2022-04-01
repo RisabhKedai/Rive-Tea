@@ -169,7 +169,7 @@ class _LoginState extends State<Login> {
                     ),
                     Center(
                       child: Text(
-                        'Sign Up Using',
+                        'Login Using',
                         style: TextStyle(
                             fontFamily: 'Gilroy',
                             fontSize: 16,
