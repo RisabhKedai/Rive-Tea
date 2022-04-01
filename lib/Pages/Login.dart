@@ -1,31 +1,22 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: unused_import, prefer_const_constructors
 
+import 'SignUp.dart';
 import 'package:flutter/material.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({Key? key}) : super(key: key);
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
-  State<SignUp> createState() => _SignUpState();
+  State<Login> createState() => _LoginState();
 }
 
-class _SignUpState extends State<SignUp> {
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
+    // ignore: prefer_const_constructors
     return Scaffold(
         body: Stack(
       children: <Widget>[
-        Container(
-          height: double.infinity,
-          width: double.infinity,
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: const [Color(0xFFFFFFFF)],
-            stops: const [0.1],
-          )),
-        ),
         Container(
           height: double.infinity,
           child: SingleChildScrollView(
@@ -41,7 +32,7 @@ class _SignUpState extends State<SignUp> {
                   height: 120.0,
                 ),
                 Text(
-                  'Sign Up',
+                  'Login',
                   style: TextStyle(
                     color: Color.fromRGBO(46, 45, 54, 1),
                     fontFamily: 'Gilroy',
@@ -49,7 +40,7 @@ class _SignUpState extends State<SignUp> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 106.0),
+                SizedBox(height: 72.0),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   // ignore: prefer_const_literals_to_create_immutables
@@ -86,6 +77,27 @@ class _SignUpState extends State<SignUp> {
                     SizedBox(
                       height: 16.0,
                     ),
+                    SizedBox(
+                      height: 60,
+                      width: 333,
+                      child: TextField(
+                        //keyboardType: TextInputType.number,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                            fillColor: Color.fromRGBO(209, 209, 209, 1),
+                            border: OutlineInputBorder(),
+                            hintText: 'Password',
+                            hintStyle: TextStyle(
+                              color: Color.fromRGBO(209, 209, 209, 1),
+                              fontFamily: 'Gilroy',
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w300,
+                            )),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
                     Container(
                       width: 333.0,
                       height: 53.0,
@@ -95,7 +107,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                       child: Center(
                         child: Text(
-                          'Get OTP',
+                          'Login',
                           style: TextStyle(
                             fontFamily: 'Gilroy',
                             fontSize: 18,
@@ -107,7 +119,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                     SizedBox(
-                      height: 16,
+                      height: 32,
                     ),
                     Center(
                       // height: 16,
@@ -117,7 +129,7 @@ class _SignUpState extends State<SignUp> {
                           // ignore: prefer_const_literals_to_create_immutables
                           children: <Widget>[
                             Text(
-                              'existing member?',
+                              'Cant Login?',
                               style: TextStyle(
                                 fontFamily: 'Gilroy',
                                 fontSize: 16,
@@ -127,7 +139,7 @@ class _SignUpState extends State<SignUp> {
                               //textAlign: TextAlign.center,
                             ),
                             Text(
-                              'Login',
+                              'Forgot Password',
                               style: TextStyle(
                                   fontFamily: 'Gilroy',
                                   fontSize: 16,
