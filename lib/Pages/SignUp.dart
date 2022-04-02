@@ -2,6 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:rive_tea/Pages/Login.dart';
+import 'package:rive_tea/Pages/homePage.dart';
+import 'package:rive_tea/Widgets/button.dart';
+import 'package:provider/provider.dart';
+import 'package:rive_tea/Providers/google_sign_in.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -27,7 +31,7 @@ class _SignUpState extends State<SignUp> {
             stops: const [0.1],
           )),
         ),
-        Container(
+        SizedBox(
           height: double.infinity,
           child: SingleChildScrollView(
             physics: AlwaysScrollableScrollPhysics(),
@@ -73,15 +77,16 @@ class _SignUpState extends State<SignUp> {
                         keyboardType: TextInputType.number,
                         maxLength: 10,
                         decoration: InputDecoration(
-                            fillColor: Color.fromRGBO(209, 209, 209, 1),
-                            border: OutlineInputBorder(),
-                            hintText: 'Enter your phone number',
-                            hintStyle: TextStyle(
-                              color: Color.fromRGBO(209, 209, 209, 1),
-                              fontFamily: 'Gilroy',
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w300,
-                            )),
+                          fillColor: Color.fromRGBO(209, 209, 209, 1),
+                          border: OutlineInputBorder(),
+                          hintText: 'Enter your phone number',
+                          hintStyle: TextStyle(
+                            color: Color.fromRGBO(209, 209, 209, 1),
+                            fontFamily: 'Gilroy',
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -114,20 +119,30 @@ class _SignUpState extends State<SignUp> {
                       // height: 16,
                       // width: 333,
                       // child: Center(
-                      child: Row(mainAxisAlignment: MainAxisAlignment.center,
-                          // ignore: prefer_const_literals_to_create_immutables
-                          children: <Widget>[
-                            Text(
-                              'existing member?',
-                              style: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontSize: 16,
-                                color: Color.fromRGBO(177, 177, 177, 1),
-                                height: 1,
-                              ),
-                              //textAlign: TextAlign.center,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: <Widget>[
+                          Text(
+                            'existing member?',
+                            style: TextStyle(
+                              fontFamily: 'Gilroy',
+                              fontSize: 16,
+                              color: Color.fromRGBO(177, 177, 177, 1),
+                              height: 1,
                             ),
-                            Text(
+                            //textAlign: TextAlign.center,
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HomePageL(),
+                                ),
+                              );
+                            },
+                            child: Text(
                               'Login',
                               style: TextStyle(
                                   fontFamily: 'Gilroy',
@@ -137,7 +152,9 @@ class _SignUpState extends State<SignUp> {
                                   fontWeight: FontWeight.w600),
                               // textAlign: TextAlign.center,
                             ),
-                          ]),
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 64,
@@ -171,19 +188,29 @@ class _SignUpState extends State<SignUp> {
                       height: 24,
                     ),
                     Center(
-                      child: Row(mainAxisAlignment: MainAxisAlignment.center,
-                          // ignore: prefer_const_literals_to_create_immutables
-                          children: <Widget>[
-                            Image.asset('assets/Google.png'),
-                            SizedBox(
-                              width: 40,
-                            ),
-                            Icon(
-                              Icons.facebook,
-                              size: 40,
-                              color: Color.fromRGBO(19, 141, 229, 1),
-                            ),
-                          ]),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: <Widget>[
+                          TextButton(
+                            onPressed: () {
+                              final provider =
+                                  Provider.of<GoogleSignInProvider>(context,
+                                      listen: false);
+                              provider.googlelogin();
+                            },
+                            child: Image.asset('assets/Google.png'),
+                          ),
+                          SizedBox(
+                            width: 40,
+                          ),
+                          Icon(
+                            Icons.facebook,
+                            size: 40,
+                            color: Color.fromRGBO(19, 141, 229, 1),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 )

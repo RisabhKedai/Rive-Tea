@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "93284141251",
+    "project_id": "rive-tea",
+    "storage_bucket": "rive-tea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93284141251:android:252cc917011f001cf87a76",
+        "android_client_info": {
+          "package_name": "com.example.rive_tea"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "93284141251-je3s36926dbh25ldt4gi9ni0ilkfe7d3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADOl2_EZZcYK1uUEcTXFY3ewFsUEGiTK4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "93284141251-je3s36926dbh25ldt4gi9ni0ilkfe7d3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
